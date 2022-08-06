@@ -12,7 +12,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class SimultaneousInvalidLogins {
+
+//Esta clase realiza las pruebas de el Test Case 13 = TC13
+public class SimoultaneousInvalidLogins {
 
 	private WebDriver driver;
 	
@@ -21,9 +23,10 @@ public class SimultaneousInvalidLogins {
 		System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://tikiciaride.000webhostapp.com/signup.php");
+		driver.get("https://tikiciaride.000webhostapp.com/login.php");
 	}
 	
+	//Test de login inválido 1
 	@Test
 	public void testSimoultaneousInvalidsLogins() {
 		WebElement emailBox = driver.findElement(By.name("email"));
@@ -42,6 +45,7 @@ public class SimultaneousInvalidLogins {
 		assertEquals("Dashboard | Tikicia Ride", driver.getTitle());
 	}
 	
+	//Test de login inválido 2
 	@Test
 	public void testSimoultaneousInvalidLogins2() {
 		WebElement emailBox = driver.findElement(By.name("email"));
@@ -60,6 +64,7 @@ public class SimultaneousInvalidLogins {
 		assertEquals("Dashboard | Tikicia Ride", driver.getTitle());
 	}
 	
+	//Test de login inválido 3
 	@Test
 	public void testSimoultaneousInvalidLogins3() {
 		WebElement emailBox = driver.findElement(By.name("email"));

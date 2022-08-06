@@ -13,8 +13,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-//Esta clase realiza las pruebas de el Test Case 11 = TC11
-public class SimoultaneosRegisters {
+//Esta clase realiza las pruebas de el Test Case 14 = TC14
+public class SimoultaneosInvalidRegister {
 
 private WebDriver driver;
 	
@@ -26,16 +26,16 @@ private WebDriver driver;
 		driver.get("https://tikiciaride.000webhostapp.com/signup.php");
 	}
 	
-	//Test de registro válido 1
+	//Test de registro con fotografía inválida
 	@Test
-	public void testSimoultaneousRegisters() {
+	public void testSimoultaneousInvalidRegisters() {
 		WebElement nameBox = driver.findElement(By.name("lname"));
 		nameBox.clear();
-		nameBox.sendKeys("Daniel Ramirez Vega");
+		nameBox.sendKeys("Danielito");
 		
 		WebElement emailBox = driver.findElement(By.name("email"));
 		emailBox.clear();
-		emailBox.sendKeys("123@gmail.com");
+		emailBox.sendKeys("danielito@gmail.com");
 		
 		WebElement passwordBox = driver.findElement(By.name("pass"));
 		passwordBox.clear();
@@ -43,7 +43,7 @@ private WebDriver driver;
 		
 		WebElement pictureBox = driver.findElement(By.name("foto"));
 		pictureBox.clear();
-		pictureBox.sendKeys("C:\\Users\\danie\\OneDrive\\Imágenes");
+		pictureBox.sendKeys("hola");
 		
 		WebElement registerButton = driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[5]/button"));
 		registerButton.submit();
@@ -53,16 +53,16 @@ private WebDriver driver;
 		assertEquals("Dashboard | Tikicia Ride", driver.getTitle());
 	}
 	
-	//Test de registro válido 2
+	//Test de registro sin nombre/nombre inválido
 	@Test
-	public void testSimoultaneousRegisters2() {
+	public void testSimoultaneousInvalidRegisters2() {
 		WebElement nameBox = driver.findElement(By.name("lname"));
 		nameBox.clear();
-		nameBox.sendKeys("Joel");
+		nameBox.sendKeys("");
 		
 		WebElement emailBox = driver.findElement(By.name("email"));
 		emailBox.clear();
-		emailBox.sendKeys("joel@gmail.com");
+		emailBox.sendKeys("danielito2@gmail.com");
 		
 		WebElement passwordBox = driver.findElement(By.name("pass"));
 		passwordBox.clear();
@@ -70,7 +70,7 @@ private WebDriver driver;
 		
 		WebElement pictureBox = driver.findElement(By.name("foto"));
 		pictureBox.clear();
-		pictureBox.sendKeys("C:\\Users\\danie\\OneDrive\\Imágenes");
+		pictureBox.sendKeys("C:\\\\Users\\\\danie\\\\OneDrive\\\\Imágenes");
 		
 		WebElement registerButton = driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[5]/button"));
 		registerButton.submit();
@@ -80,16 +80,16 @@ private WebDriver driver;
 		assertEquals("Dashboard | Tikicia Ride", driver.getTitle());
 	}
 	
-	//Test de registro válido 3
+	//Test de registro con correo inválido
 	@Test
-	public void testSimoultaneousRegisters3() {
+	public void testSimoultaneousInvalidRegisters3() {
 		WebElement nameBox = driver.findElement(By.name("lname"));
 		nameBox.clear();
-		nameBox.sendKeys("Paulo");
+		nameBox.sendKeys("danielito341");
 		
 		WebElement emailBox = driver.findElement(By.name("email"));
 		emailBox.clear();
-		emailBox.sendKeys("paulo@gmail.com");
+		emailBox.sendKeys("danielito341gmai.com");
 		
 		WebElement passwordBox = driver.findElement(By.name("pass"));
 		passwordBox.clear();
@@ -97,7 +97,7 @@ private WebDriver driver;
 		
 		WebElement pictureBox = driver.findElement(By.name("foto"));
 		pictureBox.clear();
-		pictureBox.sendKeys("C:\\Users\\danie\\OneDrive\\Imágenes");
+		pictureBox.sendKeys("C:\\\\Users\\\\danie\\\\OneDrive\\\\Imágenes");
 		
 		WebElement registerButton = driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[5]/button"));
 		registerButton.submit();

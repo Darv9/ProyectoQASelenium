@@ -12,6 +12,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
+//Esta clase realiza las pruebas de el Test Case 12 = TC12
 public class SimoultaneousLogins {
 
 	private WebDriver driver;
@@ -24,11 +26,12 @@ public class SimoultaneousLogins {
 		driver.get("https://tikiciaride.000webhostapp.com/login.php");
 	}
 	
+	//Test de login simultaneo 1
 	@Test
 	public void testSimoultaneousLogins() {
 		WebElement emailBox = driver.findElement(By.name("email"));
 		emailBox.clear();
-		emailBox.sendKeys("123@gmail.com");
+		emailBox.sendKeys("danielramirezvega@hotmail.com");
 		
 		WebElement passwordBox = driver.findElement(By.name("password"));
 		passwordBox.clear();
@@ -42,11 +45,12 @@ public class SimoultaneousLogins {
 		assertEquals("Dashboard | Tikicia Ride", driver.getTitle());
 	}
 	
+	//Test de login simultaneo 2
 	@Test
 	public void testSimoultaneousLogins2() {
 		WebElement emailBox = driver.findElement(By.name("email"));
 		emailBox.clear();
-		emailBox.sendKeys("456@gmail.com");
+		emailBox.sendKeys("joel@gmail.com");
 		
 		WebElement passwordBox = driver.findElement(By.name("password"));
 		passwordBox.clear();
@@ -60,11 +64,12 @@ public class SimoultaneousLogins {
 		assertEquals("Dashboard | Tikicia Ride", driver.getTitle());
 	}
 	
+	//Test de login simultaneo 3
 	@Test
 	public void testSimoultaneousLogins3() {
 		WebElement emailBox = driver.findElement(By.name("email"));
 		emailBox.clear();
-		emailBox.sendKeys("789@gmail.com");
+		emailBox.sendKeys("paulo@gmail.com");
 		
 		WebElement passwordBox = driver.findElement(By.name("password"));
 		passwordBox.clear();
