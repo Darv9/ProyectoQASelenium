@@ -42,6 +42,42 @@ public class SimoultaneousLogins {
 		assertEquals("Dashboard | Tikicia Ride", driver.getTitle());
 	}
 	
+	@Test
+	public void testSimoultaneousLogins2() {
+		WebElement emailBox = driver.findElement(By.name("email"));
+		emailBox.clear();
+		emailBox.sendKeys("456@gmail.com");
+		
+		WebElement passwordBox = driver.findElement(By.name("password"));
+		passwordBox.clear();
+		passwordBox.sendKeys("123");
+		
+		WebElement loginButton = driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[3]/button"));
+		loginButton.submit();
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		assertEquals("Dashboard | Tikicia Ride", driver.getTitle());
+	}
+	
+	@Test
+	public void testSimoultaneousLogins3() {
+		WebElement emailBox = driver.findElement(By.name("email"));
+		emailBox.clear();
+		emailBox.sendKeys("789@gmail.com");
+		
+		WebElement passwordBox = driver.findElement(By.name("password"));
+		passwordBox.clear();
+		passwordBox.sendKeys("123");
+		
+		WebElement loginButton = driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[3]/button"));
+		loginButton.submit();
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		assertEquals("Dashboard | Tikicia Ride", driver.getTitle());
+	}
+	
 	@After
 	public void tearDown() {
 		driver.quit();
