@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -29,7 +30,7 @@ private WebDriver driver;
 		emailBox.clear();
 		emailBox.sendKeys("paulogmail.com");
 		
-		WebElement passwordBox = driver.findElement(By.name("pass"));
+		WebElement passwordBox = driver.findElement(By.name("password"));
 		passwordBox.clear();
 		passwordBox.sendKeys("123");
 		
@@ -39,6 +40,11 @@ private WebDriver driver;
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		assertEquals("Dashboard | Tikicia Ride", driver.getTitle());
+	}
+	
+	@After
+	public void tearDown() {
+		driver.quit();
 	}
 	
 }

@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -39,7 +40,7 @@ private WebDriver driver;
 		
 		WebElement pictureBox = driver.findElement(By.name("foto"));
 		pictureBox.clear();
-		pictureBox.sendKeys("E:\\Martha\\Pictures");
+		pictureBox.sendKeys("C:\\\\\\\\Users\\\\\\\\danie\\\\\\\\OneDrive\\\\\\\\Imágenes");
 		
 		WebElement registerButton = driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[5]/button"));
 		registerButton.submit();
@@ -47,5 +48,10 @@ private WebDriver driver;
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		assertEquals("Dashboard | Tikicia Ride", driver.getTitle());
+	}
+	
+	@After
+	public void tearDown() {
+		driver.quit();
 	}
 }
