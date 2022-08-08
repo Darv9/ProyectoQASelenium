@@ -41,9 +41,6 @@ private WebDriver driver;
 		passwordBox.clear();
 		passwordBox.sendKeys("123");
 		
-		WebElement pictureBox = driver.findElement(By.name("foto"));
-		pictureBox.clear();
-		pictureBox.sendKeys("hola");
 		
 		WebElement registerButton = driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[5]/button"));
 		registerButton.submit();
